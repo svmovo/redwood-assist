@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Redwood Assist — تقييم ريلز بالذكاء الاصطناعي",
+  "short_name": "Redwood Assist",
+  "version": "1.1.0",
+  "description": "يسجل الريل من صفحة فيسبوك أو صفحة المهمة، يرفعه لـ Gemini API بمفتاحك أنت، ويرجع Approve/Reject مع كود السبب (R1-R12) والنجوم والملاحظة.",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "optional_host_permissions": [
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Redwood Assist",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "version_name": "1.1.0"
+}
