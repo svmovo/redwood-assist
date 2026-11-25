@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Redwood Assist</title>
+<style>
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body { margin: 0; width: 330px; background: #1B1220; color: #EFEAF2; font: 13px/1.6 "Segoe UI", Tahoma, sans-serif; }
+  .wrap { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+  h1 { margin: 0; font-size: 15px; }
+  .muted { color: #B9AFC2; font-size: 12px; margin: 0; }
+  .host { font-family: Consolas, monospace; font-size: 12px; color: #F2B3C4; overflow-wrap: anywhere; }
+  .btn { min-height: 40px; border-radius: 9px; border: 1px solid; font: 600 13px inherit; cursor: pointer; width: 100%; }
+  .btn:hover { filter: brightness(1.12); }
+  .wine { background: #7A1C38; border-color: #9B2A4B; color: #fff; }
+  .dark { background: #2A2130; border-color: #4A3A52; color: #EFEAF2; }
+  .ok { padding: 8px 10px; border-radius: 8px; background: #16291E; border: 1px solid #1F4D33; color: #6EE7A0; font-size: 12px; }
+  .err { padding: 8px 10px; border-radius: 8px; background: #2E1517; border: 1px solid #5A2226; color: #FCA5A5; font-size: 12px; }
+  .last { padding: 8px 10px; border-radius: 8px; background: #241A2B; border: 1px solid #4A3A52; font-size: 12px; }
+  button:focus-visible { outline: 2px solid #E38AA2; outline-offset: 2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Redwood Assist</h1>
+  <p class="muted" id="where">…</p>
+
+  <div id="need" hidden>
+    <p class="muted" style="margin-bottom:8px">البار لسه مش متفعلة على الموقع ده. كروم هيسألك إذن مرة واحدة بس.</p>
+    <button type="button" class="btn wine" id="btn-enable">شغّل البار على الموقع ده</button>
+  </div>
+
+  <div id="active" hidden>
+    <div class="ok" style="margin-bottom:8px">✓ البار شغالة على الموقع ده — هتلاقيها فوق الصفحة.</div>
+  </div>
+
+  <button type="button" class="btn dark" id="btn-options">⚙️ الإعدادات (مفتاح Gemini)</button>
+
+  <div class="last" id="last" hidden></div>
+  <div class="err" id="msg" hidden></div>
+  <p class="muted">v<span id="ver">1.0.0</span> · كل البيانات في متصفحك بس، والفيديو بيروح لحساب Gemini بتاعك.</p>
+</div>
+<script src="popup.js"></script>
+</body>
+</html>
