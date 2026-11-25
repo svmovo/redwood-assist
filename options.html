@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Redwood Assist — الإعدادات</title>
+<style>
+  body { margin: 0; background: #1B1220; color: #EFEAF2; font: 14px/1.7 "Segoe UI", Tahoma, sans-serif; }
+  .wrap { max-width: 560px; margin: 32px auto; padding: 0 20px; display: flex; flex-direction: column; gap: 14px; }
+  h1 { font-size: 18px; margin: 0; }
+  label { font-weight: 600; display: block; margin-bottom: 4px; }
+  input[type="password"], input[type="text"] { width: 100%; padding: 9px 12px; border-radius: 9px;
+    border: 1px solid #4A3A52; background: #241A2B; color: #EFEAF2; font: 14px Consolas, monospace; direction: ltr; }
+  .btn { min-height: 42px; border-radius: 9px; border: 1px solid #9B2A4B; background: #7A1C38; color: #fff;
+    font: 600 14px inherit; cursor: pointer; padding: 0 20px; }
+  .btn.dark { background: #2A2130; border-color: #4A3A52; color: #EFEAF2; }
+  .row { display: flex; gap: 10px; }
+  .muted { color: #B9AFC2; font-size: 12.5px; margin: 0; }
+  .ok { padding: 8px 10px; border-radius: 8px; background: #16291E; border: 1px solid #1F4D33; color: #6EE7A0; }
+  .err { padding: 8px 10px; border-radius: 8px; background: #2E1517; border: 1px solid #5A2226; color: #FCA5A5; }
+  [hidden] { display: none !important; }
+  a { color: #E38AA2; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>⚙️ إعدادات Redwood Assist</h1>
+
+  <div>
+    <label for="key">مفتاح Gemini API بتاعك</label>
+    <input type="password" id="key" placeholder="AIza..." autocomplete="off">
+    <p class="muted">
+      هاته مجانًا من <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Google AI Studio ← Get API key</a>.
+      المفتاح بيتخزن في متصفحك بس (chrome.storage.local) وبيتبعت لجوجل مباشرة — مبيروحش لأي حد تاني.
+    </p>
+  </div>
+
+  <div>
+    <label for="model">الموديل</label>
+    <input type="text" id="model" placeholder="gemini-2.5-flash">
+    <p class="muted">سيبه زي ما هو إلا لو عارف موديل أحدث بيدعم فيديو.</p>
+  </div>
+
+  <div class="row">
+    <button type="button" class="btn" id="save">💾 احفظ</button>
+    <button type="button" class="btn dark" id="test">🧪 اختبر المفتاح</button>
+  </div>
+
+  <div class="ok" id="ok" hidden></div>
+  <div class="err" id="err" hidden></div>
+
+  <p class="muted">ملحوظة: الباقة المجانية من جوجل ليها حد يومي للتقييمات ودقايق الفيديو. لو وصلت للحد هيطلعلك خطأ واضح في البار.</p>
+</div>
+<script src="options.js"></script>
+</body>
+</html>
